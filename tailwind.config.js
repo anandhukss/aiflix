@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        'primary-bg': '#00BFFF'
+      },
       fontFamily: {
         primary: `'Montserrat', sans-serif`,
         secondary: `'Open Sans', sans-serif`,
