@@ -1,13 +1,8 @@
-import React,{ memo } from "react";
+import React from "react";
 import Description from "./Description";
-import { useSelector } from "react-redux";
 import VideoBackground from "./VideoBackground";
 
-const PrimaryContainer = memo(function PrimaryContainer() {
-  const primaryMovie = useSelector((store) => store.movies?.nowPlayingList?.[0]);
-
-  if (!primaryMovie) return null;
-
+function PrimaryContainer({primaryMovie}) {
   return (
     <div className="relative">
       <Description
@@ -17,6 +12,6 @@ const PrimaryContainer = memo(function PrimaryContainer() {
       <VideoBackground movie_id={primaryMovie.id} />
     </div>
   );
-});
+}
 
 export default PrimaryContainer;
