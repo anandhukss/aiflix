@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        'primary-bg': '#00BFFF'
+        'primary-bg': '#0093cc'
       },
       fontFamily: {
         primary: `'Montserrat', sans-serif`,

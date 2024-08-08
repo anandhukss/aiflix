@@ -25,7 +25,7 @@ function Header() {
   };
 
   return (
-    <div className="fixed top-0 px-8 py-2 bg-gradient-to-b from-blue-900 w-full flex justify-between">
+    <div className="fixed top-0 px-8 py-2 bg-gradient-to-b from-black w-full flex justify-between z-50">
       <img className="w-36" src={Logo}></img>
 
       {user && (
