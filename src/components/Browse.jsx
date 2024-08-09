@@ -1,8 +1,8 @@
 import React from "react";
 import { useUnauth } from "../hooks/useunauth";
 import useNowPlayingList from "../hooks/useNowPlayingList";
-import PrimaryContainer from "./VideoContainer/MainContainer/PrimaryContainer";
-import MovieList from "./VideoContainer/VideoList/MovieList";
+import PrimaryContainer from "./MainContainer/PrimaryContainer";
+import MovieList from "./VideoList/MovieList";
 import { useSelector } from "react-redux";
 import usePopularList from "../hooks/usePopular";
 

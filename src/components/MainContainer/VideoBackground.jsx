@@ -1,5 +1,5 @@
 import React,{useMemo} from "react";
-import useMainVideo from "../../../hooks/useMainVideo";
+import useMainVideo from "../../hooks/useMainVideo";
 import { useSelector } from "react-redux";
 
 function VideoBackground({ movie_id }) {

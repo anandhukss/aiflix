@@ -1,5 +1,5 @@
 import React from "react";
-import { IMG_URL } from "../../../constants/api";
+import { IMG_URL } from "../../constants/api";
 
 function MovieCard({ img_id }) {
   return (
