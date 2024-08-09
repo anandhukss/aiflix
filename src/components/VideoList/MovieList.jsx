@@ -9,14 +9,14 @@ function MovieList({ movieList, title }) {
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollBy({ left: -1000, behavior: "smooth" });
-      checkScrollPosition()
+      checkScrollPosition();
     }
   };
 
   const scrollRight = () => {
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollBy({ left: 1000, behavior: "smooth" });
-      checkScrollPosition()
+      checkScrollPosition();
     }
   };
 
@@ -43,11 +43,11 @@ function MovieList({ movieList, title }) {
         )}
         <div
           ref={scrollContainerRef}
-          className="flex overflow-x-auto space-x-4 scroll-smooth scrollbar-hide"
+          className="flex overflow-x-auto space-x-4 scroll-smooth scrollbar-hide group"
         >
           {movieList.map((x) => (
-            <div key={x.id} className="flex-shrink-0">
-              <MovieCard img_id={x.backdrop_path} />
+            <div key={x.id} className="flex-shrink-0 ">
+              <MovieCard movie={x} />
             </div>
           ))}
         </div>
