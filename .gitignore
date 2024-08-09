@@ -26,4 +26,5 @@ dist-ssr
 
 #Firebase
 src/utils/firebase.js
+src/constants/api.js
 
