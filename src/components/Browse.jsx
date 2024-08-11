@@ -5,9 +5,12 @@ import PrimaryContainer from "./MainContainer/PrimaryContainer";
 import MovieList from "./VideoList/MovieList";
 import { useSelector } from "react-redux";
 import usePopularList from "../hooks/usePopular";
+import AiRecommendation from "./AiRecomendation";
 
 function Browse() {
   // useUnauth();
+
+  const isAiEnabled = useSelector((store) => store.GPT.aiRecommendation);
 
   useNowPlayingList();
   usePopularList();
@@ -15,11 +18,10 @@ function Browse() {
   const primaryList = useSelector((store) => store.movies?.nowPlayingList);
   const popularList = useSelector((store) => store.movies?.popularList);
 
-
   if (!primaryList) return null;
   if (!popularList) return null;
 
-  return (
+  return !isAiEnabled ? (
     <>
       <PrimaryContainer primaryMovie={primaryList[0]} />
       <div className="absolute -mt-40 z-30">
@@ -27,6 +29,8 @@ function Browse() {
         <MovieList movieList={popularList} title={"Trending"} />
       </div>
     </>
+  ) : (
+    <AiRecommendation />
   );
 }
 
