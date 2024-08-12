@@ -8,7 +8,7 @@ import usePopularList from "../hooks/usePopular";
 import AiRecommendation from "./AI/AiRecomendation";
 
 function Browse() {
-  // useUnauth();
+  useUnauth();
 
   const isAiEnabled = useSelector((store) => store.GPT.aiRecommendation);
 
