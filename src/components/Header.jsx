@@ -15,7 +15,6 @@ function Header() {
   const dispatch = useDispatch();
 
   const isAiEnabled = useSelector((store) => store.GPT.aiRecommendation);
-  const [userAvailable, setUserAvailable] = useState(true);
 
   const signOutUser = () => {
     signOut(auth)
@@ -37,7 +36,7 @@ function Header() {
     <div className="fixed top-0 px-8 sm:px-2 py-2 bg-gradient-to-b from-black w-full flex justify-between z-50 items-start lg:flex-col sm:bg-primary-bg">
       <img className="w-36" src={Logo}></img>
 
-      {userAvailable && (
+      {user && (
         <div className="flex items-center space-x-6 pt-4">
           <button
             onClick={toggleAi}
