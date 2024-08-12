@@ -21,7 +21,7 @@ function useGpt() {
         {
           role: "system",
           content: `You are a movie recommendation system.
-             Provide exactly 5 movie recommendations based on the user's query.
+             Provide maximum 5 movie recommendations based on the user's query.
              Provide only movie names as comma separated
              If the query is not related to movies, respond with an error message.`,
         },

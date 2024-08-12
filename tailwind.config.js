@@ -13,6 +13,12 @@ export default {
         primary: `'Montserrat', sans-serif`,
         secondary: `'Open Sans', sans-serif`,
       },
+      screens: {
+        lg: { max: '1280px' },
+        md: { max: '1100px' },
+        sm: { max: '768px' },
+        xs: { max: '350px' },
+      },
     },
   },
   plugins: [],

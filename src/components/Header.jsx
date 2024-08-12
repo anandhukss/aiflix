@@ -34,7 +34,7 @@ function Header() {
   };
 
   return (
-    <div className="fixed top-0 px-8 py-2 bg-gradient-to-b from-black w-full flex justify-between z-50 items-start">
+    <div className="fixed top-0 px-8 sm:px-2 py-2 bg-gradient-to-b from-black w-full flex justify-between z-50 items-start lg:flex-col sm:bg-primary-bg">
       <img className="w-36" src={Logo}></img>
 
       {userAvailable && (
@@ -57,19 +57,17 @@ function Header() {
           </button>
 
           <div>
-            <div className="flex justify-center space-x-4 items-center">
+            <div className="flex justify-center space-x-4 items-center  sm:flex-col sm:justify-center">
               <i
                 className="fa fa-user text-red-800 fa-2x"
                 aria-hidden="true"
               ></i>
               <div>
-                <div className="text-white">
-                  {user?.displayName || "Anandhu"}
-                </div>
+                <div className="text-white">{user?.displayName}</div>
 
                 <span
                   onClick={() => signOutUser()}
-                  className="text-red-600 hover:cursor-pointer hover:underline"
+                  className="text-red-600 hover:cursor-pointer hover:underline sm:pt-2 sm:text-xs"
                 >
                   Sign out
                 </span>

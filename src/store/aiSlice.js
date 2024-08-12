@@ -4,6 +4,7 @@ const initialState = {
     aiRecommendation: false,
     aiMessage: null,
     aiError: null,
+    searchResults: null
 }
 
 export const aiSlice = createSlice({
@@ -21,14 +22,19 @@ export const aiSlice = createSlice({
                 state.aiError = action.payload || `I'm sorry, but I'm having trouble with this right now.`
             }
         },
+        setSearchResults: (state, action) => {
+            state.searchResults = action.payload
+        },
+
         reset: (state) => {
             state.aiError = null;
-            state.aiMessage = null
+            state.aiMessage = null;
+            state.searchResults = null
         }
 
     }
 })
 
 
-export const { setAiRecommendation, setAiMessage, reset } = aiSlice.actions
+export const { setAiRecommendation, setAiMessage, reset, setSearchResults } = aiSlice.actions
 export default aiSlice.reducer

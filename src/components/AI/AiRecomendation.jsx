@@ -17,7 +17,7 @@ function AiRecommendation() {
   const test = ["array 1", "array 2", "array 3", "array 4", "array 5"];
 
   return (
-    <div className="pt-[10%]">
+    <div className="pt-[10%] sm:pt-[40vh] sm:px-6">
       <div className="w-full">
         <div className="flex mx-auto max-w-2xl">
           <input
@@ -41,7 +41,7 @@ function AiRecommendation() {
       {/* <AiResults results={test} /> */}
 
       {!loadings && (
-        <div className="mt-10">
+        <div className="mt-10 sm:mt-2">
           {aiError && (
             <div className="text-red-600 text-center"> {aiError} </div>
           )}

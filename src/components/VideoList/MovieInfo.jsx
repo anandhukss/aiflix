@@ -37,8 +37,8 @@ function MovieInfo({ closeDialog, movie }) {
   const mainVideo = videoList[0];
 
   return (
-    <div style={{ width: "60vw" }}>
-      <div className="w-full rounded-md p-4 bg-primary-bg shadow">
+    <div className="w-[60vw] sm:w-[90vw]">
+      <div className="w-full rounded-md p-4 bg-primary-bg shadow ">
         <div className="flex justify-end">
           <button className="cursor-pointer" onClick={closeDialog}>
             <i
@@ -48,22 +48,24 @@ function MovieInfo({ closeDialog, movie }) {
           </button>
         </div>
 
-        <div className="p-4  text-white z-50">
-          <div className="text-4xl">
+        <div className="p-4 text-white z-50 sm:p-2">
+          <div className="text-4xl sm:text-2xl">
             <div className="font-semibold">{movie.original_title}</div>
           </div>
-          <div className="">{movie.overview}</div>
+          <div className="sm:text-xs">{movie.overview}</div>
         </div>
 
-        <iframe
-          className="w-full aspect-video relative"
-          src={`https://www.youtube.com/embed/${mainVideo.key}?autoplay=1&mute=1`}
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-        ></iframe>
+        {mainVideo && (
+          <iframe
+            className="w-full aspect-video relative"
+            src={`https://www.youtube.com/embed/${mainVideo.key}?autoplay=1&mute=1`}
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+        )}
       </div>
     </div>
   );

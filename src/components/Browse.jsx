@@ -24,7 +24,7 @@ function Browse() {
   return !isAiEnabled ? (
     <>
       <PrimaryContainer primaryMovie={primaryList[0]} />
-      <div className="absolute -mt-40 z-30">
+      <div className="absolute -mt-40 z-30 sm:relative sm:mt-0">
         <MovieList movieList={primaryList} title={"Now Playing"} />
         <MovieList movieList={popularList} title={"Trending"} />
       </div>
