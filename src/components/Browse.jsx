@@ -5,7 +5,7 @@ import PrimaryContainer from "./MainContainer/PrimaryContainer";
 import MovieList from "./VideoList/MovieList";
 import { useSelector } from "react-redux";
 import usePopularList from "../hooks/usePopular";
-import AiRecommendation from "./AiRecomendation";
+import AiRecommendation from "./AI/AiRecomendation";
 
 function Browse() {
   // useUnauth();

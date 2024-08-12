@@ -1,0 +1,14 @@
+@keyframes fadeInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px); /* Starts 20px above its position */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Ends at its original position */
+  }
+}
+
+.fade-in-top {
+  animation: fadeInFromTop 200ms ease-out; /* Adjust duration and easing as needed */
+}

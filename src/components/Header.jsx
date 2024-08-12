@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { removeUser } from "../store/userSlice";
-import { setAiRecommendation } from "../store/aiSlice";
+import { reset, setAiRecommendation } from "../store/aiSlice";
 import { signOut } from "firebase/auth";
 
 function Header() {
@@ -15,7 +15,7 @@ function Header() {
   const dispatch = useDispatch();
 
   const isAiEnabled = useSelector((store) => store.GPT.aiRecommendation);
-  const [auth,setAuth]=useState(true)
+  const [userAvailable, setUserAvailable] = useState(true);
 
   const signOutUser = () => {
     signOut(auth)
@@ -29,6 +29,7 @@ function Header() {
   };
 
   const toggleAi = () => {
+    dispatch(reset());
     dispatch(setAiRecommendation(!isAiEnabled));
   };
 
@@ -36,7 +37,7 @@ function Header() {
     <div className="fixed top-0 px-8 py-2 bg-gradient-to-b from-black w-full flex justify-between z-50 items-start">
       <img className="w-36" src={Logo}></img>
 
-      {auth && (
+      {userAvailable && (
         <div className="flex items-center space-x-6 pt-4">
           <button
             onClick={toggleAi}

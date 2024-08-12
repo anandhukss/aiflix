@@ -7,7 +7,6 @@ import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { removeUser } from "../store/userSlice";
 import Header from "./Header";
-import AiRecommendation from "./AiRecomendation";
 
 function Body() {
   const dispatch = useDispatch();
@@ -33,10 +32,7 @@ function Body() {
       path: "/browse",
       element: <Browse />,
     },
-    {
-      path: "/ai",
-      element: <AiRecommendation />,
-    },
+ 
   ]);
 
   return (
